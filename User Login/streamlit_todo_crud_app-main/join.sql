@@ -1,0 +1,4 @@
+1)SELECT ,registration.roomno,registration.firstName, rooms.seater, registration.regno FROM rooms INNER JOIN registration ON rooms.room_no=registration.roomno;
+2)SELECT registration.id, registration.regno, registration.firstName, registration.egycontactno FROM registration LEFT OUTER JOIN states ON registration.pmnatetState=states.State;
+3)SELECT registration.regno,registration.firstName, registration.emailid, courses.course_code, course.course_sn FROM registration NATURAL JOIN courses ON registration.course=course.fn;
+4)SELECT userregistration.regno, userregistration.firstName, userregistration.contactNo, userregistration.email, userlog.logindate FROM userregistration INNER JOIN userlog ON userregistration.id=userlog.userId

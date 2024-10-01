@@ -1,0 +1,5 @@
+SET
+1)(SELECT 'Admin' AS User_Type, email, password FROM admin where reg_date > '2016-01-01') UNION (SELECT 'User', email, password FROM userregistration where regDate > '2017-01-01');
+2)(SELECT log.userId, reg.firstName, reg.lastName, log.userEmail FROM userlog as log, userregistration as reg WHERE log.userId = reg.id AND logindate > '2019-01-01' AND logindate < '2020-01-01' ) INTERSECT (SELECT log.userId, reg.firstName, reg.lastName, log.userEmail FROM userlog as log, userregistration as reg WHERE log.userId = reg.id AND logindate > '2021-01-01' AND logindate < '2022-01-01' );
+3)(SELECT room_no, seater, fees AS FeesPerMonth FROM rooms WHERE fees > '5000' AND fees < '10000') EXCEPT (SELECT roomno, seater, feespm FROM registration WHERE foodstatus = '0');
+4)(SELECT regno, firstName, emailid AS email FROM registration WHERE stayfrom > '2016-06-01') INTERSECT (SELECT regNo, firstName, email FROM userregistration WHERE updationDate > '2020-01-01');
